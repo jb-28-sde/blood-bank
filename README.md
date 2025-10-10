@@ -150,6 +150,6 @@ npm run dev
 ## 👨‍💻 Developer
 
 **👤 Jaibhim Bangrey**
-Frontend Developer | MERN Stack Enthusiast
+Full Stack Web Developer | MERN Stack Enthusiast
 📧 Email: [jaibhimb@gmail.com](mailto:jaibhimb@gmail.com)
 💼 GitHub: [https://github.com/jb-28-sde](https://github.com/jb-28-sde)
