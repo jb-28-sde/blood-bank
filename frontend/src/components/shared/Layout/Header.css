@@ -1,0 +1,106 @@
+/* Navbar container */
+.navbar {
+  height: 60px;
+  background-color: #000000 !important; /* dark navy */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.navbar-brand svg {
+  vertical-align: middle;
+}
+
+/* Navbar nav items */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: #f3f4f6;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.nav-link svg {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+/* Role badge */
+.badge {
+  background-color: #374151 !important;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+/* Logout button */
+.btn-danger {
+  background-color: #dc2626;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.2s ease-in-out;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link, .btn-danger {
+    width: 100%;
+    text-align: left;
+  }
+}

@@ -1,0 +1,64 @@
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url("https://parkhospital.in/storage/app/public/upload/bVpUZUp5LjIPVY0FPJiko4LvxuJSC2zSsSLraEeU.png") no-repeat center center/cover;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1,
+.hero p {
+  color: #fff !important;
+  /* force white text */
+}
+
+/* About Section */
+.about img {
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Action Cards */
+.action-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body h4 {
+  margin-bottom: 10px;
+}

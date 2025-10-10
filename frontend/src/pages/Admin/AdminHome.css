@@ -1,0 +1,53 @@
+.admin-home {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.admin-name {
+  color: #d32f2f;
+  text-transform: capitalize;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.divider {
+  width: 120px;
+  margin: 15px auto;
+  border: 2px solid #d32f2f;
+  border-radius: 5px;
+}
+
+.admin-card {
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.admin-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 2.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

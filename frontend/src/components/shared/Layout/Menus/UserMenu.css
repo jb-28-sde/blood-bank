@@ -1,0 +1,50 @@
+/* Container for the whole menu */
+.user-menu-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  flex-wrap: wrap; /* responsive wrap */
+  gap: 20px;
+  padding: 20px;
+  background-color: #f0f4f8; /* light background */
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Each menu card */
+.user-menu-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none; /* remove underline */
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 140px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for cards */
+.user-menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #e6f0ff;
+  color: #0056d2;
+}
+
+/* Icon style */
+.user-menu-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* Name style */
+.user-menu-name {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}

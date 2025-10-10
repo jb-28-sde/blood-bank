@@ -1,0 +1,67 @@
+.sidebar {
+  width: 220px;
+  height: calc(100vh - 60px); /* navbar ke neeche height */
+  top: 60px;                   /* navbar ke neeche start ho */
+  position: fixed;
+  background: #1f2937;
+  color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  z-index: 900;
+}
+
+.content {
+  margin-left: 220px;  /* sidebar ke width ke hisaab se */
+  margin-top: 60px;    /* navbar ke height ke hisaab se */
+  padding: 20px;
+  background: #f8fafc;
+  min-height: calc(100vh - 60px);
+}
+
+
+/* Menu Items */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* gap between icon and text */
+  padding: 12px 15px;
+  border-radius: 8px;
+  color: #d1d5db;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 10px; /* gap between items */
+}
+
+.menu-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Hover effect */
+.menu-item:hover {
+  background-color: #4a6cf7;
+  color: #fff;
+  transform: translateX(5px);
+}
+
+/* Active menu item */
+.menu-item.active {
+  background-color: #2563eb;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(72, 149, 255, 0.5);
+}
+
+/* Icon styling */
+.menu-item svg {
+  font-size: 24px;
+  flex-shrink: 0; /* don't shrink icon */
+}
+
+/* Link styling */
+.menu-item a {
+  text-decoration: none;
+  color: inherit;
+  flex: 1; /* take remaining space */
+}
