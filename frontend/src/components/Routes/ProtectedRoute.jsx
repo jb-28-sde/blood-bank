@@ -1,33 +1,44 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { Navigate } from "react-router-dom";
 import API from "../../services/API";
 import { getCurrentUser } from "../../redux/features/auth/authActions";
-import { useEffect } from "react";
-import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
-  //get current user
-  const getUser = async () => {
-    try {
-      const { data } = await API.get("/auth/current-user");
-      if (data?.success) {
-        dispatch(getCurrentUser(data));
-      }
-    } catch (error) {
-      localStorage.clear();
-      console.log(error);
-    }
-  };
   useEffect(() => {
-    getUser();
-  }, []);
-  if (localStorage.getItem("token")) {
-    return children;
-  } else {
-    return <Navigate to="/login" />;
-  }
+    const token = localStorage.getItem("token");
+    if (!token) {
+      setLoading(false); 
+      return;
+    }
+
+    (async () => {
+      try {
+        const { data } = await API.get("/auth/current-user");
+        if (data?.success) {
+          dispatch(getCurrentUser(data));
+        } else {
+          localStorage.clear();
+        }
+      // eslint-disable-next-line no-unused-vars
+      } catch (err) {
+        localStorage.clear();
+      } finally {
+        setLoading(false);
+      }
+    })();
+  }, [dispatch]);
+
+  const token = localStorage.getItem("token");
+
+  
+  if (loading) return null;
+
+  if (!token) return <Navigate to="/login" replace />;
+  return children;
 };
+
 export default ProtectedRoute;

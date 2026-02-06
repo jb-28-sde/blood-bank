@@ -1,93 +1,99 @@
-/* Navbar container */
+
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 60px;
-  background-color: #000000 !important; /* dark navy */
+  background-color: #000;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
-/* Brand */
-.navbar-brand {
+
+.navbar-left {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  font-size: 34px;
+  color: red;
+}
+
+.app-title {
   font-size: 20px;
   font-weight: 600;
-  color: #fff;
-  gap: 10px;
-  text-decoration: none;
+  color: white;
 }
 
-.navbar-brand svg {
-  vertical-align: middle;
-}
 
-/* Navbar nav items */
-.navbar-nav {
+.navbar-right {
   display: flex;
   align-items: center;
+  gap: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   margin: 0;
-  list-style: none;
-  padding: 0;
+  font-size: 15px;
 }
 
-.nav-item {
-  display: flex;
-  align-items: center;
+.role-badge {
+  background-color: #374151;
+  color: white;
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-size: 12px;
 }
+
 
 .nav-link {
   color: #f3f4f6;
+  text-decoration: none;
   font-size: 16px;
-  display: flex;
-  align-items: center;
-  margin: 0;
+  transition: color 0.3s ease;
 }
 
-.nav-link svg {
-  margin-right: 5px;
-  font-size: 20px;
+.nav-link:hover {
+  color: #e11d48;
 }
 
-/* Role badge */
-.badge {
-  background-color: #374151 !important;
-  border-radius: 12px;
-  padding: 4px 8px;
-  font-size: 12px;
-  margin-left: 6px;
-}
 
-/* Logout button */
-.btn-danger {
+.btn-logout {
   background-color: #dc2626;
   border: none;
+  color: white;
   padding: 6px 14px;
   border-radius: 6px;
   font-size: 14px;
+  cursor: pointer;
   transition: background 0.2s ease-in-out;
 }
 
-.btn-danger:hover {
+.btn-logout:hover {
   background-color: #b91c1c;
 }
+
 
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 10px;
+    height: auto;
+    padding: 10px 20px;
   }
 
-  .navbar-nav {
+  .navbar-right {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
@@ -95,11 +101,8 @@
     margin-top: 10px;
   }
 
-  .nav-item {
-    width: 100%;
-  }
-
-  .nav-link, .btn-danger {
+  .nav-link,
+  .btn-logout {
     width: 100%;
     text-align: left;
   }

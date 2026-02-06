@@ -114,8 +114,8 @@ const getInventoryController = async (req, res) => {
 // get donar records
 const getDonarsController = async (req, res) => {
   try {
-    // authMiddleware me userId attach hota hoga req.userId
-    const organisation = req.userId; // authMiddleware me decode kiya hoga token se
+    
+    const organisation = req.userId; 
     if (!organisation) {
       return res.status(401).json({
         success: false,

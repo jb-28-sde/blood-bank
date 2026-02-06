@@ -10,52 +10,52 @@ export default function Header() {
   const { user } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const location = useLocation();
-  //logout handler
-  const handlelogout = () => {
+
+  // logout handler
+   const handleLogout = () => {
+    
     localStorage.clear();
-    toast.success("logout Succesfully");
-    navigate("/login");
+    toast.success("Logout successfully");
+
+    
+    setTimeout(() => {
+      navigate("/login", { replace: true });
+      
+      window.location.reload();
+    }, 100);
   };
+
   return (
-    <>
-      <h1>
-        <nav className="navbar">
-          <div className="container-fluid">
-            <div className="navbar-brand">
-              <BiSolidDonateBlood style={{ fontSize: "40px", color: "red" }} />
-              Blood Bank App
-            </div>
-            <ul className="navbar-nav flex-row">
-              <li className="nav-item mx-3">
-                <p className="nav-link">
-                  <FaRegUserCircle /> welcome{" "}
-                  {user?.name || user?.hospitalName || user?.organisationName}
-                  &nbsp;
-                  <span className="badge text-bg-secondary">{user?.role}</span>
-                </p>
-              </li>
-              {(location.pathname === "/" || location.pathname === "/donation" || location.pathname === '/organisation')? (
-                <li className="nav-item mx-3">
-                  <Link to="/analytics" className="nav-link">
-                    Analytics
-                  </Link>
-                </li>
-              ) : (
-                <li className="nav-item mx-3">
-                  <Link to="/" className="nav-link">
-                    Home
-                  </Link>
-                </li>
-              )}
-              <li className="nav-item mx-3">
-                <button className="btn btn-danger" onClick={handlelogout}>
-                  Logout
-                </button>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </h1>
-    </>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <BiSolidDonateBlood className="logo-icon" />
+        <span className="app-title">Blood Bank App</span>
+      </div>
+
+      
+      <div className="navbar-right">
+        <p className="user-info">
+          <FaRegUserCircle /> Welcome{" "}
+          {user?.name || user?.hospitalName || user?.organisationName}
+          <span className="role-badge">{user?.role}</span>
+        </p>
+
+        {(location.pathname === "/" ||
+          location.pathname === "/donation" ||
+          location.pathname === "/organisation") ? (
+          <Link to="/analytics" className="nav-link">
+            Analytics
+          </Link>
+        ) : (
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
+        )}
+
+        <button className="btn-logout" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
+    </nav>
   );
 }
