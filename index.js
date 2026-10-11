@@ -23,6 +23,10 @@ app.use("/api/v1/auth", require("./routes/authRoutes"));
 app.use("/api/v1/inventory", require("./routes/inventoryRoutes"));
 app.use("/api/v1/analytics", require("./routes/analyticsRoutes"));
 app.use("/api/v1/admin", require("./routes/adminRoutes"));
+// Add 
+app.get("/", (req, res) => {
+  res.send("Blood Bank Backend is running successfully!");
+});
 
 //port
 const PORT = process.env.PORT || 8080;
